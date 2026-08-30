@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 English | Let's Save Our Earth!</title>
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8f1;color:#27352b}
+header{padding:55px 20px;text-align:center;background:linear-gradient(135deg,#315d3b,#78a66d);color:white;border-radius:0 0 45px 45px}
+header .earth{font-size:62px} h1{font-size:40px;margin:10px 0} header p{font-size:18px}
+nav{position:sticky;top:0;z-index:5;background:white;text-align:center;padding:12px;box-shadow:0 3px 15px #0001}
+nav a{display:inline-block;padding:10px 15px;margin:3px;text-decoration:none;color:#315d3b;font-weight:bold;border-radius:20px}
+nav a:hover{background:#e5f0df}
+main{max-width:1050px;margin:auto;padding:30px 18px}
+section{margin-bottom:35px}
+.panel{background:white;padding:30px;border-radius:28px;box-shadow:0 8px 25px #315d3b16}
+.title{text-align:center;color:#315d3b;font-size:30px;margin-bottom:22px}
+.mission{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+.mission div{padding:22px;text-align:center;border-radius:20px;background:#edf5e9;border:1px solid #d6e6d0}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.hero{padding:22px;border-radius:22px;background:#fafcf7;border:2px solid #e1eadc}
+.hero h3{color:#315d3b;margin-top:0}
+.heroes-panel{overflow:hidden;background:linear-gradient(180deg,#ffffff,#f7fbf4)}
+.hero-intro{text-align:center;line-height:1.8;color:#647066;margin:-5px auto 28px}
+.passport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:20px;align-items:start}
+.passport{position:relative;min-height:245px;padding:0 18px 20px;text-align:center;background:#fff;border:2px dashed #bfd3b8;border-radius:22px;cursor:pointer;box-shadow:0 8px 18px #315d3b12;transition:.35s;overflow:hidden}
+.passport:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:0 15px 28px #315d3b22}
+.passport-top{padding:12px 5px;margin:0 -18px 15px;background:#edf5e9;color:#315d3b;font-size:12px;font-weight:bold;letter-spacing:1px}
+
+.passport-top:first-letter{font-size:22px}
+.cartoon{position:relative;width:120px;height:110px;margin:4px auto 0}
+.head{position:absolute;width:55px;height:55px;left:32px;top:5px;border-radius:50%;background:#f2c7a5;border:2px solid #b98569}
+.hair{position:absolute;width:58px;height:30px;left:30px;top:0;border-radius:50% 50% 35% 35%;background:#4b3528;z-index:2}
+.eye{position:absolute;width:5px;height:7px;border-radius:50%;background:#27352b;top:23px}
+.e1{left:16px}.e2{right:16px}
+.smile{position:absolute;width:18px;height:8px;left:17px;top:36px;border-bottom:2px solid #8b4f48;border-radius:0 0 50% 50%}
+.body{position:absolute;width:62px;height:48px;left:29px;top:58px;border-radius:18px 18px 8px 8px;background:#78a66d}
+.arm{position:absolute;width:12px;height:43px;top:60px;border-radius:10px;background:#f2c7a5;transform-origin:top center}
+.a1{left:22px;transform:rotate(20deg)}.a2{right:20px;transform:rotate(-20deg)}
+.action-badge{position:absolute;right:-2px;bottom:0;font-size:24px;background:white;border-radius:50%;padding:3px;box-shadow:0 2px 8px #0002}
+
+.passport-icon{font-size:48px;margin:4px 0}
+.passport h3{font-size:23px;color:#315d3b;margin:5px 0 12px}
+.discover{font-size:11px;font-weight:bold;color:#82907f;letter-spacing:1px}
+.hero-story{display:none;text-align:left;line-height:1.65;font-size:14px}
+.hero-story b{color:#315d3b;font-size:16px}
+.hero-story strong{display:block;margin-top:12px;color:#5b794f}
+.passport.open{grid-column:span 2;background:#f5faef;cursor:default;min-height:285px;text-align:left;padding:0 24px 22px}
+.passport.open .passport-icon,.passport.open h3,.passport.open .discover{display:none}
+.passport.open .hero-story{display:block;padding-top:18px}
+.passport.open .passport-top{text-align:center}
+.hero-tip{margin:28px auto 0;padding:16px 20px;text-align:center;background:#fff8d9;border-radius:18px;border:1px solid #eee1a9;color:#5d5837}
+.problem{margin:12px 0;padding:15px;border-radius:15px;background:#f3f7ed}
+.problem b{color:#315d3b}
+.activity{background:#fff8d9;padding:20px;border-radius:20px;border-left:6px solid #d2ae39;margin-top:18px}
+.choice{display:inline-block;padding:10px 15px;margin:6px;border:0;border-radius:18px;background:#e8f1e4;cursor:pointer}
+.choice:hover{background:#cfe2c8}
+#activityResult{font-weight:bold;margin-top:12px}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.word{padding:20px;text-align:center;background:#eef6eb;border-radius:18px;cursor:pointer}
+.word .meaning{display:none;margin-top:10px;color:#315d3b;font-weight:bold}
+.word.show .meaning{display:block}
+
+.quiz-timer{width:210px;margin:22px auto 6px;padding:13px 18px;text-align:center;border-radius:20px;background:#315d3b;color:white;box-shadow:0 8px 18px #315d3b2b}
+.quiz-timer span{display:block;font-size:11px;letter-spacing:1.5px}.quiz-timer strong{display:block;font-size:32px;margin-top:3px}
+.timer-note{text-align:center;color:#7a857c;font-size:13px}
+.question{margin:18px 0;padding:20px;border:1px solid #dfe8da;border-radius:18px}
+.option{display:block;padding:9px;margin:7px 0;background:#f7faf5;border-radius:10px}
+button.submit{display:block;margin:25px auto 10px;padding:14px 28px;border:0;border-radius:25px;background:#315d3b;color:white;font-size:16px;font-weight:bold}
+#result{text-align:center;font-size:20px;font-weight:bold;margin-top:20px}
+footer{text-align:center;background:#315d3b;color:white;padding:25px}
+@media(max-width:650px){h1{font-size:31px}.panel{padding:22px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="earth">🌍🌱♻️</div>
+  <h1>Let's Save Our Earth!</h1>
+  <p>Grade 8 English • Lesson 4</p>
+  <p>Human activities related to the environment & rules for saving the environment</p>
+</header>
+
+<nav>
+<a href="#start">🏠 Start</a>
+<a href="#heroes">👥 Eco Heroes</a>
+<a href="#activity">🔎 Activity</a>
+<a href="#vocab">📚 Words</a>
+<a href="#quiz">📝 Quiz</a>
+</nav>
+
+<main>
+
+<section id="start">
+<div class="panel">
+<h2 class="title">🌎 Your Learning Journey</h2>
+<p style="text-align:center;line-height:1.8">
+In this lesson, you will read about five students who changed their habits
+to help save the Earth. Learn what they do, understand the environmental
+problems, learn useful words, and check your understanding.
+</p>
+<div class="mission">
+<div>1️⃣<br><b>Read</b><br>Meet the students</div>
+<div>2️⃣<br><b>Think</b><br>Find the problem</div>
+<div>3️⃣<br><b>Learn</b><br>Study vocabulary</div>
+<div>4️⃣<br><b>Check</b><br>Take the quiz</div>
+</div>
+</div>
+</section>
+
+<section id="heroes">
+<div class="panel heroes-panel">
+<h2 class="title">🌍 Who Is Saving Our Earth?</h2>
+<p class="hero-intro">Five students. Five places. Five small changes.<br><b>Tap a character to discover their eco-story!</b></p>
+<div class="passport-grid">
+<div class="passport" onclick="openHero(this)">
+  <div class="passport-top">🇮🇳 <span>CALCUTTA, INDIA</span></div>
+  <div class="cartoon" aria-label="Cartoon character for Anika">
+    <div class="hair"></div><div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="smile"></span></div>
+    <div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+    <div class="action-badge">🚲</div>
+  </div>
+  <h3>Anika</h3>
+  <div class="discover">TAP TO DISCOVER →</div>
+  <div class="hero-story"><b>🚲 Anika — Calcutta, India</b><p>Anika used to go to school by car. Now, she bikes to school every day. She can save fuel, and the air will be cleaner if more people bike instead of driving.</p><strong>🌱 Their change: Bike instead of drive.</strong></div>
+</div>
+<div class="passport" onclick="openHero(this)">
+  <div class="passport-top">🇬🇧 <span>LONDON, UK</span></div>
+  <div class="cartoon" aria-label="Cartoon character for Harry">
+    <div class="hair"></div><div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="smile"></span></div>
+    <div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+    <div class="action-badge">💡</div>
+  </div>
+  <h3>Harry</h3>
+  <div class="discover">TAP TO DISCOVER →</div>
+  <div class="hero-story"><b>💡 Harry — London, UK</b><p>Harry used to use a lot of electricity. He now switches off the computer when he is not using it and switches off the lights too. He can save energy and protect the Earth.</p><strong>🌱 Their change: Switch off unused lights and computers.</strong></div>
+</div>
+<div class="passport" onclick="openHero(this)">
+  <div class="passport-top">🇳🇿 <span>WELLINGTON, NEW ZEALAND</span></div>
+  <div class="cartoon" aria-label="Cartoon character for Emily">
+    <div class="hair"></div><div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="smile"></span></div>
+    <div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+    <div class="action-badge">💧</div>
+  </div>
+  <h3>Emily</h3>
+  <div class="discover">TAP TO DISCOVER →</div>
+  <div class="hero-story"><b>💧 Emily — Wellington, New Zealand</b><p>Emily used to have long baths. Now, she takes a shower and turns off the tap while she is soaping herself. She wants to save water.</p><strong>🌱 Their change: Save water while washing.</strong></div>
+</div>
+<div class="passport" onclick="openHero(this)">
+  <div class="passport-top">🇲🇲 <span>YANGON, MYANMAR</span></div>
+  <div class="cartoon" aria-label="Cartoon character for May Mie">
+    <div class="hair"></div><div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="smile"></span></div>
+    <div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+    <div class="action-badge">♻️</div>
+  </div>
+  <h3>May Mie</h3>
+  <div class="discover">TAP TO DISCOVER →</div>
+  <div class="hero-story"><b>♻️ May Mie — Yangon, Myanmar</b><p>May Mie used to throw away rubbish carelessly. Now, she sorts rubbish and puts different kinds in different dustbins. She also believes we should reduce, reuse or recycle waste.</p><strong>🌱 Their change: Sort, reduce, reuse and recycle.</strong></div>
+</div>
+<div class="passport" onclick="openHero(this)">
+  <div class="passport-top">🇪🇹 <span>ADDIS ABABA, ETHIOPIA</span></div>
+  <div class="cartoon" aria-label="Cartoon character for Abebe">
+    <div class="hair"></div><div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="smile"></span></div>
+    <div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+    <div class="action-badge">🌳</div>
+  </div>
+  <h3>Abebe</h3>
+  <div class="discover">TAP TO DISCOVER →</div>
+  <div class="hero-story"><b>🌳 Abebe — Addis Ababa, Ethiopia</b><p>Abebe was not interested in growing trees in the past. Now, he grows plants and trees around his house and waters them every evening because trees produce oxygen.</p><strong>🌱 Their change: Grow and care for trees.</strong></div>
+</div>
+</div>
+<div class="hero-tip">💡 <b>Think:</b> Which student's change would you like to try?</div>
+</div>
+</section>
+
+<section id="activity">
+<div class="panel">
+<h2 class="title">🔎 Find the Environmental Problem</h2>
+<p>Choose the action that matches the problem.</p>
+
+<div class="problem"><b>🚗 Problem:</b> Using a car when you can bike.<br>
+<button class="choice" onclick="check(this,true)">Save fuel by biking</button>
+<button class="choice" onclick="check(this,false)">Use more fuel</button></div>
+
+<div class="problem"><b>💡 Problem:</b> Leaving lights and computers on.<br>
+<button class="choice" onclick="check(this,false)">Leave them on</button>
+<button class="choice" onclick="check(this,true)">Switch them off</button></div>
+
+<div class="problem"><b>💧 Problem:</b> Wasting water.<br>
+<button class="choice" onclick="check(this,true)">Turn off the tap</button>
+<button class="choice" onclick="check(this,false)">Take longer baths</button></div>
+
+<div class="problem"><b>♻️ Problem:</b> Throwing rubbish away carelessly.<br>
+<button class="choice" onclick="check(this,true)">Sort and recycle rubbish</button>
+<button class="choice" onclick="check(this,false)">Throw everything anywhere</button></div>
+
+<div id="activityResult"></div>
+</div>
+</section>
+
+<section id="vocab">
+<div class="panel">
+<h2 class="title">📚 Word Garden</h2>
+<p style="text-align:center">Tap a word to reveal its Myanmar meaning.</p>
+<div class="vocab">
+<div class="word" onclick="showWord(this)"><b>protect</b><div class="meaning">ကာကွယ်သည်</div></div>
+<div class="word" onclick="showWord(this)"><b>environment</b><div class="meaning">ပတ်ဝန်းကျင်</div></div>
+<div class="word" onclick="showWord(this)"><b>fuel</b><div class="meaning">လောင်စာ</div></div>
+<div class="word" onclick="showWord(this)"><b>electricity</b><div class="meaning">လျှပ်စစ်ဓာတ်အား</div></div>
+<div class="word" onclick="showWord(this)"><b>energy</b><div class="meaning">စွမ်းအင်</div></div>
+<div class="word" onclick="showWord(this)"><b>rubbish</b><div class="meaning">အမှိုက်</div></div>
+<div class="word" onclick="showWord(this)"><b>reduce</b><div class="meaning">လျှော့ချသည်</div></div>
+<div class="word" onclick="showWord(this)"><b>reuse</b><div class="meaning">ပြန်လည်အသုံးပြုသည်</div></div>
+<div class="word" onclick="showWord(this)"><b>recycle</b><div class="meaning">ပြန်လည်အသုံးပြုသည်</div></div>
+<div class="word" onclick="showWord(this)"><b>oxygen</b><div class="meaning">အောက်ဆီဂျင်</div></div>
+</div>
+</div>
+</section>
+
+<section id="quiz">
+<div class="panel">
+<h2 class="title">📝 Earth Saver Quiz</h2>
+<p style="text-align:center"><b>10 questions • 10 marks</b></p>
+<div class="quiz-timer">
+  <span>⏱️ TIME LEFT</span>
+  <strong id="quizTimer">05:00</strong>
+</div>
+<p class="timer-note">The timer starts when you answer your first question.</p>
+
+<div class="question"><b>1. How did Anika go to school before?</b>
+<label class="option"><input type="radio" name="q1" value="1"> By car</label>
+<label class="option"><input type="radio" name="q1" value="0"> By bicycle</label>
+<label class="option"><input type="radio" name="q1" value="0"> By train</label></div>
+
+<div class="question"><b>2. What can Anika save?</b>
+<label class="option"><input type="radio" name="q2" value="1"> Fuel</label>
+<label class="option"><input type="radio" name="q2" value="0"> Water</label>
+<label class="option"><input type="radio" name="q2" value="0"> Paper</label></div>
+
+<div class="question"><b>3. What does Harry switch off?</b>
+<label class="option"><input type="radio" name="q3" value="1"> The computer and lights</label>
+<label class="option"><input type="radio" name="q3" value="0"> The tap</label>
+<label class="option"><input type="radio" name="q3" value="0"> The bicycle</label></div>
+
+<div class="question"><b>4. Too much electricity can cause ______.</b>
+<label class="option"><input type="radio" name="q4" value="1"> global warming</label>
+<label class="option"><input type="radio" name="q4" value="0"> clean water</label>
+<label class="option"><input type="radio" name="q4" value="0"> more oxygen</label></div>
+
+<div class="question"><b>5. What does Emily turn off?</b>
+<label class="option"><input type="radio" name="q5" value="1"> The tap</label>
+<label class="option"><input type="radio" name="q5" value="0"> The lights</label>
+<label class="option"><input type="radio" name="q5" value="0"> The computer</label></div>
+
+<div class="question"><b>6. What does May Mie sort?</b>
+<label class="option"><input type="radio" name="q6" value="1"> Rubbish</label>
+<label class="option"><input type="radio" name="q6" value="0"> Fuel</label>
+<label class="option"><input type="radio" name="q6" value="0"> Water</label></div>
+
+<div class="question"><b>7. What should we do with waste?</b>
+<label class="option"><input type="radio" name="q7" value="1"> Reduce, reuse or recycle it.</label>
+<label class="option"><input type="radio" name="q7" value="0"> Throw it carelessly.</label>
+<label class="option"><input type="radio" name="q7" value="0"> Waste more.</label></div>
+
+<div class="question"><b>8. Why are trees important?</b>
+<label class="option"><input type="radio" name="q8" value="1"> They produce oxygen.</label>
+<label class="option"><input type="radio" name="q8" value="0"> They produce fuel.</label>
+<label class="option"><input type="radio" name="q8" value="0"> They produce electricity.</label></div>
+
+<div class="question"><b>9. Where does Abebe grow plants and trees?</b>
+<label class="option"><input type="radio" name="q9" value="1"> Around his house</label>
+<label class="option"><input type="radio" name="q9" value="0"> In a car</label>
+<label class="option"><input type="radio" name="q9" value="0"> In a shop</label></div>
+
+<div class="question"><b>10. Which action protects the environment?</b>
+<label class="option"><input type="radio" name="q10" value="1"> Save water and energy.</label>
+<label class="option"><input type="radio" name="q10" value="0"> Waste water.</label>
+<label class="option"><input type="radio" name="q10" value="0"> Leave lights on.</label></div>
+
+<button class="submit" onclick="quiz()">🌱 Check My Score</button>
+<div id="result"></div>
+</div>
+</section>
+
+</main>
+
+<footer>
+🌍 Grade 8 English • Lesson 4: Let's Save Our Earth! 🌱
+</footer>
+
+<script>
+function openHero(card){
+  document.querySelectorAll(".passport.open").forEach(function(x){
+    if(x!==card)x.classList.remove("open");
+  });
+  card.classList.toggle("open");
+}
+function showWord(x){x.classList.toggle("show")}
+let activityScore=0;
+let quizTime=300, quizStarted=false, quizInterval=null;
+function startQuizTimer(){
+  if(quizStarted)return;
+  quizStarted=true;
+  quizInterval=setInterval(function(){
+    let m=Math.floor(quizTime/60), s=quizTime%60;
+    document.getElementById("quizTimer").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+    if(quizTime<=0){
+      clearInterval(quizInterval);
+      quiz(true);
+    }
+    quizTime--;
+  },1000);
+}
+document.querySelectorAll('#quiz input[type="radio"]').forEach(function(input){
+  input.addEventListener("change",startQuizTimer);
+});
+function check(btn,correct){
+ if(correct){activityScore++;document.getElementById("activityResult").textContent="✅ Correct! Keep going!";}
+ else{document.getElementById("activityResult").textContent="❌ Try again. Think about how the student changed the habit.";}
+}
+function quiz(autoSubmit=false){
+ let score=0,missing=0;
+ for(let i=1;i<=10;i++){
+   let a=document.querySelector('input[name="q'+i+'"]:checked');
+   if(!a) missing++;
+   else if(a.value==="1") score++;
+ }
+ let r=document.getElementById("result");
+ if(missing && !autoSubmit){r.textContent="⚠️ Please answer all 10 questions first.";return;}
+ clearInterval(quizInterval);
+ let msg=score===10?"🏆 Excellent! You are an Earth Saver!":score>=8?"🌟 Very good! You care about the Earth!":score>=5?"😊 Good effort! Keep learning!":"🌱 Review the lesson and try again!";
+ if(autoSubmit && missing) msg="⏰ Time is up! Here is your score.";
+ r.innerHTML=msg+"<br><br>Score: "+score+" / 10";
+ r.scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
